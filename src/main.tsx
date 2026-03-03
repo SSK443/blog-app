@@ -21,23 +21,6 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
 
-          <Route
-            path="login"
-            element={
-              <Protected authentication={false}>
-                <LoginPage />
-              </Protected>
-            }
-          />
-
-          <Route
-            path="signup"
-            element={
-              <Protected authentication={false}>
-                <SignupPage />
-              </Protected>
-            }
-          />
 
           <Route
             path="all-posts"
@@ -67,9 +50,28 @@ createRoot(document.getElementById("root")!).render(
           />
 
           {/* Public */}
-          <Route path="post/:slug" element={<PostPage />} />
+          <Route path="post/:slug" element={<Protected>
+            <PostPage />
+          </Protected>} />
         </Route>
 
+          <Route
+            path="login"
+            element={
+              <Protected authentication={false}>
+                <LoginPage />
+              </Protected>
+            }
+          />
+
+          <Route
+            path="signup"
+            element={
+              <Protected authentication={false}>
+                <SignupPage />
+              </Protected>
+            }
+          />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>

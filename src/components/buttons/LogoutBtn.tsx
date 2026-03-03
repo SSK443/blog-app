@@ -3,7 +3,7 @@ import authService from "../../appwrite/auth";
 import { useDispatch } from "react-redux";
 import CommonBtn from "./CommonBtn";
 
-function LogoutBtn() {
+function LogoutBtn({className=""}) {
   const dispatch = useDispatch();
 
   const handleLogout= async():Promise<void>=>{
@@ -18,7 +18,7 @@ dispatch(logout())
   }
 
   return (
-    <CommonBtn variant="tertiary" 
+    <CommonBtn variant="tertiary" className={`${className}`}
       onClick={handleLogout}
      
     >

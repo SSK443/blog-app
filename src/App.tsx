@@ -30,7 +30,7 @@ function App() {
   
 
   return (
-    <div className={theme==="dark"?"dark":""}>
+    <div className={theme===`dark`?`dark`:undefined}>
       <div
       className="
       min-h-screen
@@ -41,7 +41,7 @@ function App() {
        text-gray-900
        ">
         <Header/>
-        <main className="min-h-[60vh] max-w-7xl mx-auto px-4 py-8">
+        <main className="min-h-[60vh] max-w-7xl max-h-fit mx-auto px-4 py-8">
          {loading?(
            <div className="h-screen flex items-center justify-center">
               <svg

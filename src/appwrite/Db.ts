@@ -16,6 +16,8 @@ export interface PostDocument extends Models.Document {
   userId: string;
 }
 
+
+
 interface UpdatePostData {
   title?: string;
   content?: string;
@@ -35,7 +37,7 @@ class DbService {
     this.databases = new Databases(this.client);
     this.bucket = new Storage(this.client);
   }
-  //create a post
+  // create a post
   async createPost({
   title,
   slug,

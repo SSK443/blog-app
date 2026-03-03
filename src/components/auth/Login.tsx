@@ -1,10 +1,11 @@
 import React from "react";
 import { CommonBtn, CommonInput, Logo } from "../index";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login as authLogin } from "../../store/features/authSlice";
 import authService from "../../appwrite/auth";
 import { Link, useNavigate } from "react-router-dom";
+import type { RootState } from "../../store/store";
 
 interface LoginFormData {
   email: string;
@@ -41,9 +42,11 @@ export default function Login() {
       setError(error?.message || "Invalid email or password");
     }
   };
+  const theme=useSelector((state:RootState)=>state.theme.color)
 
   return (
-    <div className="min-h-screen flex items-center justify-center 
+  <div className={theme===`dark`?`dark`:undefined}>
+      <div  className="min-h-screen flex items-center justify-center 
     bg-white dark:bg-slate-900 transition-colors duration-300">
 
       <div className="w-full max-w-md 
@@ -147,5 +150,6 @@ export default function Login() {
         </div>
       </div>
     </div>
+  </div>
   );
 }

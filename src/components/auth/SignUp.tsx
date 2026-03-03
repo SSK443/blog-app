@@ -2,9 +2,10 @@ import React from "react";
 import { Logo, CommonBtn, CommonInput } from "../index";
 import { useForm } from "react-hook-form";
 import authService from "../../appwrite/auth";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/features/authSlice";
 import { Link, useNavigate } from "react-router-dom";
+import type { RootState } from "../../store/store";
 
 interface SignUpFormData {
   name: string;
@@ -42,9 +43,11 @@ export default function SignUp() {
       setError(error?.message || "Failed to create account.");
     }
   };
+  const theme=useSelector((state:RootState)=>state.theme.color)
 
   return (
-    <div className="min-h-screen flex items-center justify-center 
+   <div className={theme===`dark`?`dark`:undefined}>
+     <div className="min-h-screen flex items-center justify-center 
     bg-white dark:bg-slate-900 transition-colors duration-300">
 
       <div className="w-full max-w-md 
@@ -150,5 +153,6 @@ export default function SignUp() {
         </div>
       </div>
     </div>
+   </div>
   );
 }

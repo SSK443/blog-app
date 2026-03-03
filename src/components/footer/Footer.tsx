@@ -9,7 +9,7 @@ function Footer() {
     <footer className="border-2 border-gray-300 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xl">
         {/* Top section */}
         <Container className="pt-5">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 p-5 max-auto text-gray-700 dark:text-slate-400">
           
           {/* Brand */}
           <div className="space-y-4">
