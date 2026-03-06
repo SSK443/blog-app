@@ -8,18 +8,11 @@ interface CreatePostData {
   status: "active" | "inactive" | "draft";
   userId: string;
 }
-// export interface PostDocument extends Models.Document {
-//   title: string;
-//   content: string;
-//   featuredImage: string;
-//   status: "active" | "inactive" | "draft";
-//   userId: string;
-// }
+
 
 export interface PostDocument extends Models.Document {
   $id: string
   title: string
-  slug: string
   content: string
   status: "active" | "inactive" | "draft"
   featuredImage: string
