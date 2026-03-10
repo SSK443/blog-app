@@ -110,7 +110,7 @@ const submit = async (data: PostFormData) => {
 
 const slugTransform=useCallback((value:string):string=>{
   if(value && typeof value==="string"){
-    return value.trim().toLowerCase().replace(/[^a-zA-Z\d]+/g,"-").replace(/^-+|-+$/g,"");
+    return value.trim().toLowerCase().replace(/[^a-zA-Z\d]+/g,"-").replace(/^-+|-+$/g,"").slice(0,35);
   }else{
     return ""
   }
