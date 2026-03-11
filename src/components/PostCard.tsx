@@ -6,7 +6,7 @@ function PostCard({ $id, featuredImage, title, content }: PostDocument) {
 
   const plainText = content.replace(/<[^>]+>/g, "");
   
-  const newImgUrl=dbService. getFileView(featuredImage)
+  const newImgUrl=dbService.getFileView(featuredImage);
  
 
   return (

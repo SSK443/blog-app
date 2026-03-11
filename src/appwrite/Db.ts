@@ -167,13 +167,7 @@ class DbService {
     }
   }
 
-  //file preview service
-  // getFilePreview(fileId: string): string {
-  //   return this.bucket.getFilePreview(
-  //     config.vite_appwrite_bucket_id,
-  //      fileId
-  //     );
-  // }
+
   getFileView(fileId: string): string {
   return this.bucket.getFileView(
     config.vite_appwrite_bucket_id,
